@@ -1,10 +1,11 @@
 const fs = require('fs');
 const { Storage, File } = require('megajs');
 
-const MEGA_EMAIL = process.env.MEGA_EMAIL;
-const MEGA_PASSWORD = process.env.MEGA_PASSWORD;
+// MEGA email සහ password මෙහි සෘජුවම දායි
+const MEGA_EMAIL = 'chamaradhanushka55@gmail.com';
+const MEGA_PASSWORD = '983033059V';
 
-// Connect to MEGA
+// MEGA සම්බන්ධ කිරීම
 function connectToMega() {
     return new Storage({
         email: MEGA_EMAIL,
@@ -12,7 +13,7 @@ function connectToMega() {
     });
 }
 
-// Upload file to MEGA
+// MEGA වෙත ගොනුවක් upload කිරීම
 async function uploadToMega(filePath, fileName) {
     return new Promise((resolve, reject) => {
         const storage = connectToMega();
@@ -27,10 +28,11 @@ async function uploadToMega(filePath, fileName) {
         });
 
         storage.on('error', reject);
+        storage.login();
     });
 }
 
-// Download file from MEGA
+// MEGA වෙතින් ගොනුවක් බාගත කිරීම
 async function downloadFromMega(fileUrl, outputPath) {
     return new Promise((resolve, reject) => {
         const file = File.fromURL(fileUrl);
