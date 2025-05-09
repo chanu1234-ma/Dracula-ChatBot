@@ -1,0 +1,57 @@
+{
+  "name": "DraculaBot",
+  "description": "JavaScript WhatsApp bot made by Chamara",
+  "logo": "https://png.pngtree.com/png-clipart/20231017/original/pngtree-halloween-pumpkin-head-male-character-riding-a-flaming-horse-png-image_13279545.png",
+  "keywords": ["whatsapp", "bot", "AI", "Dracula"],
+  "success_url": "/",
+
+  "env": {
+    "SESSION_ID": {
+      "description": "Your WhatsApp session ID",
+      "required": true
+    },
+    "OWNER_NAME": {
+      "description": "The name of the bot owner",
+      "required": true
+    },
+    "OWNER_NUMBER": {
+      "description": "The owner's WhatsApp number",
+      "required": true
+    },
+    "BOT_NAME": {
+      "description": "The name of the bot",
+      "required": true
+    },
+    "ALIVE_IMG": {
+      "description": "The image URL to show when bot is alive",
+      "required": true
+    },
+    "ALIVE_MSG": {
+      "description": "The message to show when bot is alive",
+      "required": true
+    },
+    "OPENAI_API_KEY": {
+      "description": "Your OpenAI API Key",
+      "required": true
+    },
+    "AI_MODEL": {
+      "description": "AI model to use (text-davinci-003 by default)",
+      "required": true
+    },
+    "AI_TEMP": {
+      "description": "AI temperature setting for creativity",
+      "required": true
+    },
+    "AI_MAX_TOKENS": {
+      "description": "Maximum tokens for the AI response",
+      "required": true
+    }
+  },
+
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+    }
+  ],
+  "stack": "heroku-24"
+}
